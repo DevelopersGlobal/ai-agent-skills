@@ -1,54 +1,126 @@
 <div align="center">
 
+
 # 🤖 AI Agent Skills
 
-### *Production-grade AI agent skills for real-world applications — and everyday use*
+**No prompt engineering required. Just copy → paste → go.**
 
-[![GitHub Stars](https://img.shields.io/github/stars/DevelopersGlobal/ai-agent-skills?style=for-the-badge&logo=github&color=FFD700)](https://github.com/DevelopersGlobal/ai-agent-skills/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/DevelopersGlobal/ai-agent-skills?style=for-the-badge&logo=github&color=00BFFF)](https://github.com/DevelopersGlobal/ai-agent-skills/network)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
-[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub_Pages-blue?style=for-the-badge&logo=github)](https://developersglobal.github.io/ai-agent-skills)
+[![GitHub Stars](https://img.shields.io/github/stars/DhanushNehru/claude-skills?style=for-the-badge&logo=github&color=yellow)](https://github.com/DhanushNehru/claude-skills/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
+[![Skills](https://img.shields.io/badge/Skills-25+-purple?style=for-the-badge)](#-skill-catalog)
 
-> **Inspired by [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)**
+<br/>
 
-**🌐 [View the Interactive Skills Browser →](https://developersglobal.github.io/ai-agent-skills)**
+> **Think of these as plugins for your brain's AI copilot.**
+> Each skill is a self-contained instruction set — battle-tested, community-reviewed, and ready for production use.
+
+<br/>
+
+[Get Started](#-quick-start) · [Browse Skills](#-skill-catalog) · [Create a Skill](#-create-your-own) · [Contribute](#-contributing)
 
 </div>
 
 ---
 
-## 🎯 What is this?
+## 🤔 What Are Claude Skills?
 
-AI agents are only as good as the instructions they follow. **AI Agent Skills** is a curated, battle-tested library of skill files — structured markdown prompts — that transform AI coding agents (Claude, Gemini, Cursor, Copilot, etc.) into disciplined, production-ready engineers.
+A **Claude Skill** is a portable, copy-paste-ready instruction file that gives Claude a specialized capability. Unlike generic prompt collections, each skill is:
 
-Unlike generic prompts, these skills encode **actual workflows** with steps, checkpoints, verification gates, and anti-pattern guards — the same discipline senior engineers bring to every production deployment.
-
-```
-THINK → PLAN → BUILD → TEST → REVIEW → HARDEN → SHIP
-  ↓        ↓      ↓       ↓       ↓        ↓        ↓
-Clarify  Break  Write  Verify  Quality  Security  Deploy
-Goals    Down   Code   Output  Gates    Gates     Live
-```
-
----
-
-## 🏆 Why This Repo Goes Beyond the Rest
-
-| Feature | This Repo | agent-skills | karpathy-skills |
-|--------|-----------|--------------|-----------------|
-| Production + Everyday use | ✅ | Production only | General |
-| Multi-agent orchestration | ✅ | ❌ | ❌ |
-| AI safety & hallucination guards | ✅ | ❌ | Partial |
-| RAG / Memory skills | ✅ | ❌ | ❌ |
-| Prompt injection defense | ✅ | ❌ | ❌ |
-| GitHub Pages search UI | ✅ | ❌ | ❌ |
-| 30+ curated skills | ✅ | 20 skills | 4 principles |
-| Everyday productivity skills | ✅ | ❌ | ❌ |
+| Feature | Description |
+|---|---|
+| 🎯 **Purpose-built** | Designed for a specific real-world task, not a toy demo |
+| 📋 **Structured** | Uses the proven `Role → Goal → Constraints → Output` contract format |
+| 🧪 **Tested** | Every skill includes example inputs/outputs so you know what to expect |
+| 🔌 **Plug-and-play** | Works with Claude.ai, Claude API, Claude Code (`CLAUDE.md`), and any Claude-powered tool |
+| 🏷️ **Tagged** | Difficulty level, estimated token usage, and compatibility info included |
 
 ---
 
 ## ⚡ Quick Start
+
+### Method 1: Claude.ai (Recommended for beginners)
+1. Browse the [Skill Catalog](#-skill-catalog) below
+2. Open the skill file (e.g., `skills/developer/code-reviewer.md`)
+3. Copy the content inside the `<system_prompt>` tags
+4. Paste it into **Claude.ai → Project Knowledge** or **Custom Instructions**
+5. Start chatting — Claude now has that skill!
+
+### Method 2: Claude Code (`CLAUDE.md`)
+1. Copy the skill file to your project root as `CLAUDE.md` (or append to an existing one)
+2. Run `claude` in your terminal — it auto-reads the file
+3. Claude Code now operates with that specialized skill
+
+### Method 3: API / SDK
+```python
+import anthropic
+
+# Load the skill
+with open("skills/developer/code-reviewer.md") as f:
+    skill = f.read()
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    max_tokens=4096,
+    system=skill,  # ← The skill becomes the system prompt
+    messages=[{"role": "user", "content": "Review this pull request: ..."}]
+)
+```
+
+---
+
+## 📚 Skill Catalog
+
+### 🛠️ Developer Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [Code Reviewer](skills/developer/code-reviewer.md) | Production-grade code review with security, performance & maintainability analysis | ⭐⭐ |
+| [Git Commit Crafter](skills/developer/git-commit-crafter.md) | Generate perfect conventional commits from diffs | ⭐ |
+| [Bug Hunter](skills/developer/bug-hunter.md) | Systematic debugging agent that traces root causes | ⭐⭐⭐ |
+| [API Designer](skills/developer/api-designer.md) | Design RESTful APIs following OpenAPI best practices | ⭐⭐ |
+| [Regex Wizard](skills/developer/regex-wizard.md) | Build, explain, and test regular expressions in any flavor | ⭐ |
+
+### 🔒 Security Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [Threat Modeler](skills/security/threat-modeler.md) | STRIDE-based threat modeling for any system architecture | ⭐⭐⭐ |
+| [Dependency Auditor](skills/security/dependency-auditor.md) | Deep-dive analysis of package vulnerabilities and supply chain risks | ⭐⭐ |
+| [Security Headers Checker](skills/security/security-headers-checker.md) | Analyze and fix HTTP security headers for web applications | ⭐ |
+
+### 📊 Data & Analysis Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [SQL Query Optimizer](skills/data/sql-query-optimizer.md) | Analyze and optimize slow SQL queries with execution plan analysis | ⭐⭐ |
+| [Data Storyteller](skills/data/data-storyteller.md) | Transform raw datasets into compelling narratives with visualizations | ⭐⭐ |
+| [CSV Detective](skills/data/csv-detective.md) | Profile, clean, and analyze messy CSV/JSON datasets | ⭐ |
+
+### ✍️ Writing & Content Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [Technical Writer](skills/writing/technical-writer.md) | Write clear, structured technical documentation and ADRs | ⭐⭐ |
+| [README Generator](skills/writing/readme-generator.md) | Generate stunning, complete README files from codebases | ⭐ |
+| [Changelog Author](skills/writing/changelog-author.md) | Generate human-readable changelogs from git history | ⭐ |
+
+### 🏗️ Architecture & DevOps Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [System Design Coach](skills/architecture/system-design-coach.md) | Interactive system design interview prep and architecture review | ⭐⭐⭐ |
+| [Dockerfile Optimizer](skills/devops/dockerfile-optimizer.md) | Analyze and optimize Dockerfiles for size, security, and build speed | ⭐⭐ |
+| [CI/CD Pipeline Builder](skills/devops/cicd-pipeline-builder.md) | Generate production-ready GitHub Actions / GitLab CI pipelines | ⭐⭐ |
+
+### 🧩 Productivity Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [Meeting Summarizer](skills/productivity/meeting-summarizer.md) | Extract action items, decisions, and key points from meeting transcripts | ⭐ |
+| [Email Diplomat](skills/productivity/email-diplomat.md) | Craft professional emails for sensitive situations | ⭐ |
+| [Learning Path Generator](skills/productivity/learning-path-generator.md) | Create personalized, structured learning roadmaps for any topic | ⭐⭐ |
+
+### 🎨 Creative Skills
+| Skill | Description | Difficulty |
+|-------|-------------|:----------:|
+| [Color Palette Generator](skills/creative/color-palette-generator.md) | Generate accessible, harmonious color palettes from any inspiration | ⭐ |
+| [Naming Consultant](skills/creative/naming-consultant.md) | Generate memorable names for projects, products, and companies | ⭐ |
 
 ### Step 1 — Clone the repo
 ```bash
@@ -150,76 +222,78 @@ curl https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/ski
 | [meeting-notes-to-tasks](skills/meeting-notes-to-tasks/SKILL.md) | Convert meeting notes into structured action items |
 | [research-and-summarize](skills/research-and-summarize/SKILL.md) | Distill complex topics into actionable summaries |
 
+## Metadata
+- **Category**: Developer | Security | Data | Writing | DevOps | Productivity | Creative
+- **Difficulty**: ⭐ | ⭐⭐ | ⭐⭐⭐
+- **Works With**: Claude.ai, Claude Code, API
+- **Estimated Tokens**: ~500 system prompt tokens
+
+## System Prompt
+<system_prompt>
+  ... the actual instruction set ...
+</system_prompt>
+
+## Example Usage
+**User**: [example input]
+**Claude**: [example output]
+
+## Tips & Variations
+- Modification ideas for different use cases
+```
+
 ---
 
-## 🏛️ Skill Anatomy
+## 🔨 Create Your Own
 
-Every skill follows the same battle-tested structure:
+Use our [Skill Template](SKILL_TEMPLATE.md) to create your own skill:
 
-```
-┌─────────────────────────────────────────────────────┐
-│ SKILL.md                                            │
-│                                                     │
-│  ┌─ Frontmatter ────────────────────────────────┐  │
-│  │  name:        kebab-case-name                │  │
-│  │  description: One-line trigger description   │  │
-│  │  applies-to:  [claude, gemini, cursor, ...]  │  │
-│  │  category:    think|plan|build|test|...      │  │
-│  └──────────────────────────────────────────────┘  │
-│                                                     │
-│  Overview      → What this skill accomplishes       │
-│  When to Use   → Exact triggering conditions        │
-│  Process       → Numbered, verifiable steps         │
-│  Rationalizations → Common excuses + rebuttals      │
-│  Red Flags     → Warning signs the skill is needed  │
-│  Verification  → Non-negotiable evidence required   │
-│  References    → Supporting checklists/docs         │
-└─────────────────────────────────────────────────────┘
-```
+1. Fork this repo
+2. Copy `SKILL_TEMPLATE.md` into the appropriate `skills/<category>/` folder
+3. Fill in your skill following the template structure
+4. Test it thoroughly (include real example I/O)
+5. Submit a PR!
+
+**Pro tips:**
+- Use XML tags (`<context>`, `<constraints>`, `<output_format>`) for complex instructions
+- Keep system prompts under 1000 tokens for optimal performance
+- Include at least 2 example interactions
+- Add edge cases in your "Tips & Variations" section
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! The best skills are:
-- **Specific** — Actionable steps, not vague principles
-- **Verifiable** — Clear exit criteria with evidence
-- **Battle-tested** — Based on real production experience
-- **Minimal** — Only what the agent needs; no bloat
+We love contributions! Whether it's a new skill, an improvement to an existing one, or fixing a typo — every PR is welcome.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/skill-anatomy.md](docs/skill-anatomy.md).
+Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before submitting.
 
----
-
-## 🌐 GitHub Pages
-
-The full skills library is browsable at **[developersglobal.github.io/ai-agent-skills](https://developersglobal.github.io/ai-agent-skills)** with:
-- 🔍 Full-text search across all skills
-- 🏷️ Filter by category and agent type
-- 📋 One-click copy for any skill
-- 📱 Mobile-friendly responsive design
+### What makes a great skill?
+- ✅ Solves a **real problem** people encounter regularly
+- ✅ Includes **tested examples** with realistic inputs/outputs
+- ✅ Is **self-contained** — no external dependencies or setup
+- ✅ Has a **clear, specific scope** — does one thing extremely well
+- ✅ Uses **structured formatting** (XML tags, markdown) for reliability
 
 ---
 
-## 📊 Inspiration & Credits
+## 🌟 Star History
 
-This project builds on and extends the ideas from:
-- [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — Production engineering skills for AI agents
-- [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) — Karpathy's observations on LLM coding pitfalls
-- [DevelopersGlobal](https://github.com/DevelopersGlobal) — Community-driven developer tools
+If this repo helped you, please consider giving it a ⭐ — it helps others discover these skills!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=DhanushNehru/claude-skills&type=Date)](https://star-history.com/#DhanushNehru/claude-skills&Date)
 
 ---
 
-## 📄 License
+## 📜 License
 
-MIT — Use these skills in your projects, teams, and tools. Attribution appreciated but not required.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**⭐ Star this repo to help developers everywhere build better AI agents ⭐**
+**Made with 🧠 by the community, for the community.**
 
-Made with ❤️ by [DevelopersGlobal](https://github.com/DevelopersGlobal)
+[⬆ Back to Top](#-claude-skills)
 
 </div>
