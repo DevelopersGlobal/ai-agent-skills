@@ -1,0 +1,250 @@
+[
+  {
+    "name": "think-before-coding",
+    "title": "Think Before Coding",
+    "category": "think",
+    "description": "Forces explicit reasoning before writing any code. Surfaces assumptions, manages confusion, and prevents hallucination by demanding clarity upfront.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/think-before-coding/SKILL.md"
+  },
+  {
+    "name": "goal-driven-execution",
+    "title": "Goal-Driven Execution",
+    "category": "think",
+    "description": "Transforms imperative instructions into declarative goals with verifiable success criteria. Enables autonomous looping until verified completion.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/goal-driven-execution/SKILL.md"
+  },
+  {
+    "name": "idea-to-spec",
+    "title": "Idea to Spec",
+    "category": "think",
+    "description": "Converts vague ideas into concrete, testable specifications with acceptance criteria. No implementation begins without a spec.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/idea-to-spec/SKILL.md"
+  },
+  {
+    "name": "task-decomposition",
+    "title": "Task Decomposition",
+    "category": "plan",
+    "description": "Breaks features into atomic, independently verifiable tasks. No task should take more than 4 hours.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/task-decomposition/SKILL.md"
+  },
+  {
+    "name": "context-loading",
+    "title": "Context Loading",
+    "category": "plan",
+    "description": "Load minimum necessary context into agent context windows. Prevents token bloat, reduces cost, and improves focus.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/context-loading/SKILL.md"
+  },
+  {
+    "name": "multi-agent-orchestration",
+    "title": "Multi-Agent Orchestration",
+    "category": "plan",
+    "description": "Designs and coordinates multi-agent pipelines where specialized agents collaborate to complete complex tasks.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/multi-agent-orchestration/SKILL.md"
+  },
+  {
+    "name": "incremental-coding",
+    "title": "Incremental Coding",
+    "category": "build",
+    "description": "Build in verifiable increments. Never implement more than can be tested right now.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/incremental-coding/SKILL.md"
+  },
+  {
+    "name": "simplicity-first",
+    "title": "Simplicity First",
+    "category": "build",
+    "description": "Minimum code that solves the problem — nothing speculative. No premature abstractions.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/simplicity-first/SKILL.md"
+  },
+  {
+    "name": "surgical-changes",
+    "title": "Surgical Changes",
+    "category": "build",
+    "description": "Touch only what you must. Leave the rest untouched. Every changed line must trace to the task.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/surgical-changes/SKILL.md"
+  },
+  {
+    "name": "api-design",
+    "title": "API Design",
+    "category": "build",
+    "description": "Design stable, versioned, self-documenting APIs. Easy to use correctly, hard to use incorrectly.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/api-design/SKILL.md"
+  },
+  {
+    "name": "frontend-engineering",
+    "title": "Frontend Engineering",
+    "category": "build",
+    "description": "Accessible, performant, responsive UI patterns. Component design and Core Web Vitals compliance.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/frontend-engineering/SKILL.md"
+  },
+  {
+    "name": "rag-and-memory",
+    "title": "RAG & Memory",
+    "category": "build",
+    "description": "Retrieval-Augmented Generation and agent memory patterns. Retrieves only relevant context, prevents context bloat.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/rag-and-memory/SKILL.md"
+  },
+  {
+    "name": "test-driven-development",
+    "title": "Test-Driven Development",
+    "category": "test",
+    "description": "Red-green-refactor cycle with meaningful coverage. Tests written before implementation.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/test-driven-development/SKILL.md"
+  },
+  {
+    "name": "debugging-methodology",
+    "title": "Debugging Methodology",
+    "category": "test",
+    "description": "Systematic root cause analysis. Hypothesis-driven debugging — never guess-and-check.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/debugging-methodology/SKILL.md"
+  },
+  {
+    "name": "integration-testing",
+    "title": "Integration Testing",
+    "category": "test",
+    "description": "Test real system boundaries, not mocks of mocks. Integration tests verify components work together.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/integration-testing/SKILL.md"
+  },
+  {
+    "name": "ai-output-validation",
+    "title": "AI Output Validation",
+    "category": "test",
+    "description": "Validates, parses, and sanitizes AI-generated outputs before they reach end users or downstream systems.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/ai-output-validation/SKILL.md"
+  },
+  {
+    "name": "code-review",
+    "title": "Code Review",
+    "category": "review",
+    "description": "Structured code review focusing on correctness, security, and maintainability.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/code-review/SKILL.md"
+  },
+  {
+    "name": "performance-optimization",
+    "title": "Performance Optimization",
+    "category": "review",
+    "description": "Measure first, optimize second. Data-driven performance improvements with before/after benchmarks.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/performance-optimization/SKILL.md"
+  },
+  {
+    "name": "refactoring",
+    "title": "Refactoring",
+    "category": "review",
+    "description": "Safe, behavior-preserving code transformation backed by tests. Refactor with evidence, not instinct.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/refactoring/SKILL.md"
+  },
+  {
+    "name": "documentation",
+    "title": "Documentation",
+    "category": "review",
+    "description": "Document decisions, not just implementations. ADRs for architectural choices, runbooks for operations.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/documentation/SKILL.md"
+  },
+  {
+    "name": "security-hardening",
+    "title": "Security Hardening",
+    "category": "harden",
+    "description": "OWASP Top 10, secrets management, and least-privilege principles before any code ships.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/security-hardening/SKILL.md"
+  },
+  {
+    "name": "prompt-injection-defense",
+    "title": "Prompt Injection Defense",
+    "category": "harden",
+    "description": "Guards AI agents against prompt injection attacks — both direct and indirect.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/prompt-injection-defense/SKILL.md"
+  },
+  {
+    "name": "hallucination-prevention",
+    "title": "Hallucination Prevention",
+    "category": "harden",
+    "description": "Detects and mitigates LLM hallucinations in production pipelines.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/hallucination-prevention/SKILL.md"
+  },
+  {
+    "name": "error-handling",
+    "title": "Error Handling",
+    "category": "harden",
+    "description": "Graceful degradation and meaningful error messages. Every error path is designed, not discovered.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/error-handling/SKILL.md"
+  },
+  {
+    "name": "observability",
+    "title": "Observability",
+    "category": "harden",
+    "description": "Structured logging, distributed tracing, and alerting for AI systems and traditional services.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/observability/SKILL.md"
+  },
+  {
+    "name": "production-deployment",
+    "title": "Production Deployment",
+    "category": "ship",
+    "description": "Zero-downtime deployments with pre-flight checks, staged rollouts, and rollback plans.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/production-deployment/SKILL.md"
+  },
+  {
+    "name": "ci-cd-pipelines",
+    "title": "CI/CD Pipelines",
+    "category": "ship",
+    "description": "Automated quality gates from commit to production. Every merge to main is potentially shippable.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/ci-cd-pipelines/SKILL.md"
+  },
+  {
+    "name": "git-workflow",
+    "title": "Git Workflow",
+    "category": "ship",
+    "description": "Trunk-based development with atomic commits, clean history, and meaningful commit messages.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/git-workflow/SKILL.md"
+  },
+  {
+    "name": "code-explanation",
+    "title": "Code Explanation",
+    "category": "everyday",
+    "description": "Get layered, context-aware explanations of unfamiliar code. Understand what, why, and how to work with it safely.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/code-explanation/SKILL.md"
+  },
+  {
+    "name": "meeting-notes-to-tasks",
+    "title": "Meeting Notes to Tasks",
+    "category": "everyday",
+    "description": "Converts meeting notes into structured action items with owners and due dates.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/meeting-notes-to-tasks/SKILL.md"
+  },
+  {
+    "name": "research-and-summarize",
+    "title": "Research & Summarize",
+    "category": "everyday",
+    "description": "Distill complex topics into layered, actionable summaries. Key insight first, detail second, action last.",
+    "applies-to": ["claude", "gemini", "cursor", "copilot", "any"],
+    "path": "skills/research-and-summarize/SKILL.md"
+  }
+]
