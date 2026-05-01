@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/docs/assets/banner.svg" alt="AI Agent Skills" width="100%"/>
-
 # 🤖 AI Agent Skills
 
 ### *Production-grade AI agent skills for real-world applications — and everyday use*
