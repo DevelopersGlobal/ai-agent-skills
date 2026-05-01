@@ -1,8 +1,7 @@
 <div align="center">
 
-# 🧠 Claude Skills
 
-### Ready-to-use skill files that transform Claude into specialized AI agents.
+# 🤖 AI Agent Skills
 
 **No prompt engineering required. Just copy → paste → go.**
 
@@ -123,25 +122,105 @@ message = client.messages.create(
 | [Color Palette Generator](skills/creative/color-palette-generator.md) | Generate accessible, harmonious color palettes from any inspiration | ⭐ |
 | [Naming Consultant](skills/creative/naming-consultant.md) | Generate memorable names for projects, products, and companies | ⭐ |
 
+### Step 1 — Clone the repo
+```bash
+git clone https://github.com/DevelopersGlobal/ai-agent-skills.git
+```
+
+### Step 2 — Pick a skill and copy it into your agent
+
+**Claude / Cursor / Copilot / any agent:**
+Copy the contents of any `SKILL.md` file into your agent's system prompt, instructions file, or context window.
+
+**For Claude Code** — add to your project's `CLAUDE.md`:
+```bash
+cat skills/think-before-coding/SKILL.md >> CLAUDE.md
+```
+
+**For Cursor** — copy into `.cursor/rules/`:
+```bash
+cp skills/security-hardening/SKILL.md .cursor/rules/security-hardening.mdc
+```
+
+**For Gemini CLI** — add to your project's `GEMINI.md`:
+```bash
+cat skills/goal-driven-execution/SKILL.md >> GEMINI.md
+```
+
+**One-liner (any skill, any agent):**
+```bash
+# View raw skill content, then paste into your agent
+curl https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/skills/production-deployment/SKILL.md
+```
+
+> **Browse and copy skills visually →** [developersglobal.github.io/ai-agent-skills](https://developersglobal.github.io/ai-agent-skills)
+
 ---
 
-## 🧬 Skill Anatomy
+## 📚 All 30 Skills
 
-Every skill follows a consistent structure:
+### 🧠 Think — Before You Code
+| Skill | Description |
+|-------|-------------|
+| [think-before-coding](skills/think-before-coding/SKILL.md) | Surface assumptions, manage confusion, prevent hallucination |
+| [goal-driven-execution](skills/goal-driven-execution/SKILL.md) | Transform tasks into verifiable goals with success criteria |
+| [idea-to-spec](skills/idea-to-spec/SKILL.md) | Convert vague ideas into concrete, testable specifications |
 
-```
-skills/
-├── developer/
-│   └── code-reviewer.md        ← The skill file
-├── security/
-│   └── threat-modeler.md
-└── ...
-```
+### 📐 Plan — Break It Down
+| Skill | Description |
+|-------|-------------|
+| [task-decomposition](skills/task-decomposition/SKILL.md) | Break features into atomic, independently verifiable tasks |
+| [context-loading](skills/context-loading/SKILL.md) | Load minimum necessary context; avoid token bloat |
+| [multi-agent-orchestration](skills/multi-agent-orchestration/SKILL.md) | Design and coordinate multi-agent pipelines |
 
-Each skill file contains:
-```markdown
-# 🔍 Skill Name
-> One-line description
+### 🏗️ Build — Write Production Code
+| Skill | Description |
+|-------|-------------|
+| [incremental-coding](skills/incremental-coding/SKILL.md) | Build in verifiable increments; never big-bang rewrites |
+| [simplicity-first](skills/simplicity-first/SKILL.md) | Minimum code that solves the problem — nothing speculative |
+| [surgical-changes](skills/surgical-changes/SKILL.md) | Touch only what you must; leave the rest untouched |
+| [api-design](skills/api-design/SKILL.md) | Design stable, versioned, self-documenting APIs |
+| [frontend-engineering](skills/frontend-engineering/SKILL.md) | Accessible, performant, responsive UI patterns |
+| [rag-and-memory](skills/rag-and-memory/SKILL.md) | Retrieval-Augmented Generation and agent memory patterns |
+
+### ✅ Test — Prove It Works
+| Skill | Description |
+|-------|-------------|
+| [test-driven-development](skills/test-driven-development/SKILL.md) | Red-green-refactor with meaningful coverage |
+| [debugging-methodology](skills/debugging-methodology/SKILL.md) | Systematic root cause analysis; never guess-and-check |
+| [integration-testing](skills/integration-testing/SKILL.md) | Test real system boundaries, not mocks of mocks |
+| [ai-output-validation](skills/ai-output-validation/SKILL.md) | Validate, parse, and sanitize AI-generated outputs |
+
+### 🔍 Review — Quality Gates
+| Skill | Description |
+|-------|-------------|
+| [code-review](skills/code-review/SKILL.md) | Structured review checklist; correctness over style |
+| [performance-optimization](skills/performance-optimization/SKILL.md) | Measure first, optimize second; no premature optimization |
+| [refactoring](skills/refactoring/SKILL.md) | Safe, behavior-preserving transformation with tests |
+| [documentation](skills/documentation/SKILL.md) | Document decisions, not just implementations |
+
+### 🔒 Harden — Security & Reliability
+| Skill | Description |
+|-------|-------------|
+| [security-hardening](skills/security-hardening/SKILL.md) | OWASP Top 10, secrets management, least privilege |
+| [prompt-injection-defense](skills/prompt-injection-defense/SKILL.md) | Guard AI agents against prompt injection attacks |
+| [hallucination-prevention](skills/hallucination-prevention/SKILL.md) | Detect and mitigate LLM hallucinations in pipelines |
+| [error-handling](skills/error-handling/SKILL.md) | Graceful degradation and meaningful error messages |
+| [observability](skills/observability/SKILL.md) | Structured logging, tracing, and alerting for AI systems |
+
+### 🚀 Ship — Deploy with Confidence
+| Skill | Description |
+|-------|-------------|
+| [production-deployment](skills/production-deployment/SKILL.md) | Zero-downtime deploys with rollback plans |
+| [ci-cd-pipelines](skills/ci-cd-pipelines/SKILL.md) | Automated quality gates from commit to production |
+| [git-workflow](skills/git-workflow/SKILL.md) | Trunk-based development, atomic commits, clean history |
+
+### 🌟 Everyday — Productivity Skills
+| Skill | Description |
+|-------|-------------|
+| [code-explanation](skills/code-explanation/SKILL.md) | Get clear, layered explanations of unfamiliar code |
+| [meeting-notes-to-tasks](skills/meeting-notes-to-tasks/SKILL.md) | Convert meeting notes into structured action items |
+| [research-and-summarize](skills/research-and-summarize/SKILL.md) | Distill complex topics into actionable summaries |
 
 ## Metadata
 - **Category**: Developer | Security | Data | Writing | DevOps | Productivity | Creative

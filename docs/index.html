@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Agent Skills — Production-Grade Skills for AI Agents | DevelopersGlobal</title>
+<meta name="description" content="30+ production-grade AI agent skills for Claude, Gemini, Cursor, Copilot. Browse, search, and copy skills for production applications and everyday use."/>
+<meta property="og:title" content="AI Agent Skills — DevelopersGlobal"/>
+<meta property="og:description" content="Production-grade AI agent skills for real-world applications and everyday use."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#2a2a3d;
+  --accent:#6c63ff;--accent2:#ff6584;
+  --text:#e8e8f0;--text2:#9898b0;--text3:#5a5a78;
+  --think:#a78bfa;--plan:#60a5fa;--build:#34d399;--test:#fbbf24;
+  --review:#f87171;--harden:#fb923c;--ship:#4ade80;--everyday:#e879f9;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Inter",sans-serif;min-height:100vh;overflow-x:hidden}
+
+.hero{
+  background:linear-gradient(135deg,#0a0a0f 0%,#12102a 50%,#0a0a0f 100%);
+  border-bottom:1px solid var(--border);padding:72px 24px 52px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(108,99,255,.22),transparent);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);
+  border-radius:100px;padding:6px 18px;font-size:13px;color:var(--accent);
+  margin-bottom:28px;font-weight:500;
+}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:580px;margin:0 auto 36px;line-height:1.65}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;padding:13px 26px;border-radius:12px;font-weight:600;font-size:14px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(108,99,255,.35);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(108,99,255,.45)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text);padding:13px 26px;border-radius:12px;font-weight:500;font-size:14px;text-decoration:none;transition:all .2s;cursor:pointer;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;justify-content:center;gap:40px;margin-top:44px;flex-wrap:wrap}
+.stat-num{font-size:1.9rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:12px;color:var(--text3);margin-top:3px}
+
+.search-bar{max-width:680px;margin:0 auto;padding:32px 24px 0}
+.search-wrap{position:relative}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:15px 20px 15px 50px;color:var(--text);font-size:15px;font-family:inherit;transition:border-color .2s;outline:none;}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap input::placeholder{color:var(--text3)}
+.search-icon{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:18px;pointer-events:none}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:1100px;margin:22px auto 0;padding:0 24px}
+.filter-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 15px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-btn.active{color:#fff}
+.filter-btn[data-cat="all"].active{background:var(--accent);border-color:var(--accent)}
+.filter-btn[data-cat="think"].active{background:var(--think);border-color:var(--think)}
+.filter-btn[data-cat="plan"].active{background:var(--plan);border-color:var(--plan)}
+.filter-btn[data-cat="build"].active{background:var(--build);border-color:var(--build);color:#000}
+.filter-btn[data-cat="test"].active{background:var(--test);border-color:var(--test);color:#000}
+.filter-btn[data-cat="review"].active{background:var(--review);border-color:var(--review)}
+.filter-btn[data-cat="harden"].active{background:var(--harden);border-color:var(--harden);color:#000}
+.filter-btn[data-cat="ship"].active{background:var(--ship);border-color:var(--ship);color:#000}
+.filter-btn[data-cat="everyday"].active{background:var(--everyday);border-color:var(--everyday)}
+
+.results-header{max-width:1100px;margin:24px auto 0;padding:0 24px;color:var(--text3);font-size:13px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;max-width:1100px;margin:14px auto 60px;padding:0 24px}
+
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;transition:all .22s;cursor:pointer;position:relative;overflow:hidden;}
+.skill-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent));border-radius:16px 16px 0 0;}
+.skill-card:hover{border-color:rgba(108,99,255,.4);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.skill-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.skill-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.3}
+.skill-cat{font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;flex-shrink:0;}
+.skill-desc{font-size:13px;color:var(--text2);line-height:1.55;margin-bottom:14px}
+.skill-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.skill-agents{display:flex;gap:5px;flex-wrap:wrap}
+.agent-tag{font-size:10px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;color:var(--text3)}
+.copy-btn{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .2s;font-weight:500;white-space:nowrap;}
+.copy-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+[data-cat="think"]{--cat-color:var(--think)}[data-cat="plan"]{--cat-color:var(--plan)}
+[data-cat="build"]{--cat-color:var(--build)}[data-cat="test"]{--cat-color:var(--test)}
+[data-cat="review"]{--cat-color:var(--review)}[data-cat="harden"]{--cat-color:var(--harden)}
+[data-cat="ship"]{--cat-color:var(--ship)}[data-cat="everyday"]{--cat-color:var(--everyday)}
+.cat-think{background:rgba(167,139,250,.15);color:var(--think)}.cat-plan{background:rgba(96,165,250,.15);color:var(--plan)}
+.cat-build{background:rgba(52,211,153,.15);color:var(--build)}.cat-test{background:rgba(251,191,36,.15);color:var(--test)}
+.cat-review{background:rgba(248,113,113,.15);color:var(--review)}.cat-harden{background:rgba(251,146,60,.15);color:var(--harden)}
+.cat-ship{background:rgba(74,222,128,.15);color:var(--ship)}.cat-everyday{background:rgba(232,121,249,.15);color:var(--everyday)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:32px 16px;overflow-y:auto;}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:20px;max-width:700px;width:100%;padding:28px;position:relative;margin:auto;}
+.modal-close{position:absolute;top:14px;right:14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:5px 12px;cursor:pointer;color:var(--text2);font-size:13px;transition:color .15s;}
+.modal-close:hover{color:var(--text)}
+.modal-meta{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.modal h2{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+.modal-desc{font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:16px}
+.modal-body{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:18px;font-size:12.5px;font-family:"JetBrains Mono",monospace;color:var(--text2);line-height:1.65;max-height:380px;overflow-y:auto;white-space:pre-wrap;tab-size:2;}
+.modal-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.modal-hint{font-size:12px;color:var(--text3);margin-top:10px}
+.no-results{text-align:center;padding:60px 24px;color:var(--text3);grid-column:1/-1}
+.no-results h3{font-size:1.1rem;color:var(--text2);margin-bottom:6px}
+
+/* HOW TO USE STRIP */
+.how-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 24px;margin-bottom:0}
+.how-strip-inner{max-width:1100px;margin:0 auto}
+.how-strip h2{font-size:1rem;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.how-step{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.how-step-num{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.how-step h3{font-size:14px;font-weight:600;margin-bottom:6px}
+.how-step code{font-size:12px;font-family:"JetBrains Mono",monospace;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 10px;display:block;color:var(--text2);margin-top:8px;overflow-x:auto;white-space:nowrap}
+
+footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--text3);font-size:13px}
+footer a{color:var(--accent);text-decoration:none}footer a:hover{text-decoration:underline}
+.footer-links{display:flex;gap:22px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+
+@media(max-width:600px){
+  .hero{padding:44px 16px 36px}
+  .hero-stats{gap:20px}
+  .skills-grid{grid-template-columns:1fr;padding:0 12px}
+  .filters{padding:0 12px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-badge">⚡ 30 Production-Grade Skills</div>
+  <h1>AI Agent <span>Skills</span></h1>
+  <p>Battle-tested skill files for Claude, Gemini, Cursor &amp; Copilot. Copy any skill into your agent's context and watch it follow the same workflows senior engineers use in production.</p>
+  <div class="hero-cta">
+    <a href="https://github.com/DevelopersGlobal/ai-agent-skills" class="btn-primary">⭐ Star on GitHub</a>
+    <a href="https://github.com/DevelopersGlobal/ai-agent-skills/blob/main/CONTRIBUTING.md" class="btn-secondary">Contribute a Skill</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="total-count">30</div><div class="stat-label">Skills</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">AI Agents Supported</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">MIT</div><div class="stat-label">License</div></div>
+  </div>
+</section>
+
+<div class="how-strip">
+  <div class="how-strip-inner">
+    <h2>How to use a skill</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">Step 1</div>
+        <h3>Clone the repo</h3>
+        <code>git clone https://github.com/DevelopersGlobal/ai-agent-skills.git</code>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">Step 2</div>
+        <h3>Find a skill below</h3>
+        <p style="font-size:13px;color:var(--text2);margin-top:6px">Search, filter, or browse. Click any card to preview the full skill content.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">Step 3</div>
+        <h3>Copy into your agent</h3>
+        <code>cat skills/&lt;name&gt;/SKILL.md >> CLAUDE.md</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search-bar">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search skills... e.g. security, hallucination, deploy, RAG" autocomplete="off" aria-label="Search skills"/>
+  </div>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="think">🧠 Think</button>
+  <button class="filter-btn" data-cat="plan">📐 Plan</button>
+  <button class="filter-btn" data-cat="build">🏗️ Build</button>
+  <button class="filter-btn" data-cat="test">✅ Test</button>
+  <button class="filter-btn" data-cat="review">🔍 Review</button>
+  <button class="filter-btn" data-cat="harden">🔒 Harden</button>
+  <button class="filter-btn" data-cat="ship">🚀 Ship</button>
+  <button class="filter-btn" data-cat="everyday">🌟 Everyday</button>
+</div>
+
+<div class="results-header" id="results-count"></div>
+<div class="skills-grid" id="skills-grid"></div>
+
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕ Close</button>
+    <div class="modal-meta" id="modal-meta"></div>
+    <h2 id="modal-title"></h2>
+    <p class="modal-desc" id="modal-desc"></p>
+    <div class="modal-body" id="modal-body">Loading skill content...</div>
+    <div class="modal-hint">Copy this content into your agent's system prompt, CLAUDE.md, GEMINI.md, or .cursor/rules/</div>
+    <div class="modal-actions">
+      <button class="btn-primary" id="modal-copy">📋 Copy Skill</button>
+      <a class="btn-secondary" id="modal-github" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/DevelopersGlobal/ai-agent-skills">GitHub Repo</a>
+    <a href="https://github.com/DevelopersGlobal/ai-agent-skills/blob/main/CONTRIBUTING.md">Contribute</a>
+    <a href="https://github.com/DevelopersGlobal/ai-agent-skills/blob/main/LICENSE">MIT License</a>
+    <a href="https://github.com/DevelopersGlobal">DevelopersGlobal</a>
+  </div>
+  <p>Made with ❤️ by <a href="https://github.com/DevelopersGlobal">DevelopersGlobal</a> · Inspired by <a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a> &amp; <a href="https://github.com/forrestchang/andrej-karpathy-skills">andrej-karpathy-skills</a></p>
+</footer>
+
+<script>
+const RAW = "https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/";
+const GH  = "https://github.com/DevelopersGlobal/ai-agent-skills/blob/main/";
+let skills = [], activeFilter = "all", query = "";
+
+async function init() {
+  try {
+    // Try local first (works when served from gh-pages), fallback to raw GitHub
+    let r = await fetch("../skills/index.json").catch(() => null);
+    if (!r || !r.ok) r = await fetch(RAW + "skills/index.json");
+    skills = await r.json();
+  } catch(e) {
+    document.getElementById("skills-grid").innerHTML =
+      '<div class="no-results"><h3>Could not load skills</h3><p>Please visit the <a href="https://github.com/DevelopersGlobal/ai-agent-skills" style="color:var(--accent)">GitHub repository</a> directly.</p></div>';
+    return;
+  }
+  document.getElementById("total-count").textContent = skills.length;
+  render();
+}
+
+function render() {
+  const q = query.toLowerCase();
+  const filtered = skills.filter(s =>
+    (activeFilter === "all" || s.category === activeFilter) &&
+    (!q || s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q) || s.category.includes(q) || (s.name||"").includes(q))
+  );
+  document.getElementById("results-count").textContent =
+    filtered.length + " skill" + (filtered.length !== 1 ? "s" : "") +
+    (activeFilter !== "all" ? " in " + activeFilter : "") +
+    (q ? ' matching "' + query + '"' : "");
+  const grid = document.getElementById("skills-grid");
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="no-results"><h3>No skills found</h3><p>Try a different search or category</p></div>';
+    return;
+  }
+  grid.innerHTML = filtered.map(s => `
+    <div class="skill-card" data-cat="${s.category}" onclick="openModal('${s.name}')" id="card-${s.name}" tabindex="0" role="button" aria-label="View skill: ${s.title}">
+      <div class="skill-header">
+        <div class="skill-title">${s.title}</div>
+        <span class="skill-cat cat-${s.category}">${s.category}</span>
+      </div>
+      <p class="skill-desc">${s.description}</p>
+      <div class="skill-footer">
+        <div class="skill-agents">${(s["applies-to"]||[]).slice(0,3).map(a=>`<span class="agent-tag">${a}</span>`).join("")}</div>
+        <button class="copy-btn" onclick="event.stopPropagation();copySkill('${s.name}')" id="copybtn-${s.name}">📋 Copy</button>
+      </div>
+    </div>`).join("");
+  // Keyboard nav on cards
+  grid.querySelectorAll(".skill-card").forEach(c => {
+    c.addEventListener("keydown", e => { if(e.key==="Enter"||e.key===" ") c.click(); });
+  });
+}
+
+document.getElementById("search").addEventListener("input", e => { query = e.target.value; render(); });
+document.querySelectorAll(".filter-btn").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+  b.classList.add("active"); activeFilter = b.dataset.cat; render();
+}));
+
+const cache = {};
+async function getContent(name) {
+  if (cache[name]) return cache[name];
+  const s = skills.find(x => x.name === name);
+  if (!s) return "Skill not found.";
+  try {
+    const r = await fetch(RAW + s.path);
+    const t = await r.text();
+    cache[name] = t; return t;
+  } catch { return "Could not load skill content. Please view on GitHub."; }
+}
+
+async function openModal(name) {
+  const s = skills.find(x => x.name === name);
+  if (!s) return;
+  document.getElementById("modal-title").textContent = s.title;
+  document.getElementById("modal-desc").textContent = s.description;
+  document.getElementById("modal-meta").innerHTML = `<span class="skill-cat cat-${s.category}">${s.category}</span>`;
+  document.getElementById("modal-body").textContent = "Loading...";
+  document.getElementById("modal-github").href = GH + s.path;
+  document.getElementById("modal-copy").onclick = () => copySkill(name, true);
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("modal-body").textContent = await getContent(name);
+}
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("modal").addEventListener("click", e => { if(e.target===document.getElementById("modal")) closeModal(); });
+document.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); });
+
+async function copySkill(name, fromModal=false) {
+  const content = await getContent(name);
+  try { await navigator.clipboard.writeText(content); } catch { return; }
+  if (!fromModal) {
+    const btn = document.getElementById("copybtn-" + name);
+    if (btn) { btn.textContent = "✅ Copied!"; setTimeout(() => btn.textContent = "📋 Copy", 2000); }
+  } else {
+    const mb = document.getElementById("modal-copy");
+    if (mb) { mb.textContent = "✅ Copied!"; setTimeout(() => mb.textContent = "📋 Copy Skill", 2000); }
+  }
+}
+
+init();
+</script>
+</body>
+</html>
