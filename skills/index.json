@@ -1,5 +1,19 @@
 [
   {
+    "name": "agent-qa-run-review",
+    "title": "agent-qa run review",
+    "category": "test",
+    "description": "Review recorded agent-qa runs and memidex provenance to explain a QA verdict, identify missing evidence, and propose the smallest next step.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/agent-qa-run-review/SKILL.md"
+  },
+  {
     "name": "ai-output-validation",
     "title": "Ai Output Validation",
     "category": "test",
