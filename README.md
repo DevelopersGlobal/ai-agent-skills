@@ -85,7 +85,7 @@ curl https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/ski
 
 ---
 
-## 📚 All 30 Skills
+## 📚 All Skills
 
 ### 🧠 Think — Before You Code
 | Skill | Description |
@@ -118,6 +118,7 @@ curl https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/ski
 | [debugging-methodology](skills/debugging-methodology/SKILL.md) | Systematic root cause analysis; never guess-and-check |
 | [integration-testing](skills/integration-testing/SKILL.md) | Test real system boundaries, not mocks of mocks |
 | [ai-output-validation](skills/ai-output-validation/SKILL.md) | Validate, parse, and sanitize AI-generated outputs |
+| [agent-qa-run-review](skills/agent-qa-run-review/SKILL.md) | Review agent-qa evidence and memidex memory provenance before explaining a QA verdict |
 
 ### 🔍 Review — Quality Gates
 | Skill | Description |
