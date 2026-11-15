@@ -31,6 +31,14 @@ When reviewing code for testability:
 3. Include: happy path, boundary conditions, error cases, security inputs
 4. Name tests as specifications: `"returns 404 when user not found"`
 
+## Context
+
+Load only what this task needs. [context-loading](../skills/context-loading/SKILL.md) is the full method.
+
+- **Load:** The code under test and its spec or bug report, its existing tests and the helpers and fixtures they use, and [testing-patterns](../references/testing-patterns.md). Take only the part of each the tests need, such as the public interface and every branch of the code under test.
+- **Skip:** Tests for unrelated code, coverage and CI reports beyond the files under test, and snapshot files the change does not update.
+- **Budget:** Use the budget the user set for your model. With none set, stay under 70% of the model's context window. If the context is still over the budget, summarize further, then drop supporting references before the code the task is about.
+
 ## Skills to Reference
 
 - [test-driven-development](../skills/test-driven-development/SKILL.md)

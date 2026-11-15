@@ -32,6 +32,14 @@ For every change you review, apply these checks in order:
 - Never say "this looks okay" without checking all six categories above
 - If you're uncertain about a security implication: say so and recommend a security specialist review
 
+## Context
+
+Load only what this task needs. [context-loading](../skills/context-loading/SKILL.md) is the full method.
+
+- **Load:** The diff, each entry point whose external input reaches the change (routes, CLI arguments, parsers), the path from that input through the change to where the data is used (queries, shell commands, HTML, prompts, API responses), the auth checks on that path, dependency scan output and any manifest or lockfile changes, and [security-checklist](../references/security-checklist.md). Take only the part of each the six checks need.
+- **Skip:** Unchanged code no external input reaches, styling and copy changes, and history before this change. Never skip a changed file when you check for secrets.
+- **Budget:** Use the budget the user set for your model. With none set, stay under 70% of the model's context window. If the context is still over the budget, summarize further, then drop supporting references before the code the task is about.
+
 ## Skills to Reference
 
 - [security-hardening](../skills/security-hardening/SKILL.md)
