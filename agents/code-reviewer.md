@@ -33,6 +33,14 @@ Every comment must be labeled:
 - Separate opinion from requirement
 - Acknowledge constraints the author was working within
 
+## Context
+
+Load only what this task needs. [context-loading](../skills/context-loading/SKILL.md) is the full method.
+
+- **Load:** The diff, the PR description and linked issue, the touched files, the direct callers and callees of changed functions, the tests that cover the change, and the matching checklist: [security-checklist](../references/security-checklist.md) for sensitive changes, [testing-patterns](../references/testing-patterns.md) when tests change. Take only the part of each the review needs, such as the changed functions.
+- **Skip:** Any other code, unchanged lockfiles, unchanged generated and vendored code, build output, and history before this PR.
+- **Budget:** Use the budget the user set for your model. With none set, stay under 70% of the model's context window. If the context is still over the budget, summarize further, then drop supporting references before the code the task is about.
+
 ## Skills to Reference
 
 - [code-review](../skills/code-review/SKILL.md)
