@@ -153,6 +153,24 @@ curl https://raw.githubusercontent.com/DevelopersGlobal/ai-agent-skills/main/ski
 
 ---
 
+### YouTube Creator Workflows
+
+Original workflows for planning, producing, presenting, and reviewing videos. These
+prepare drafts and recommendations; they do not publish or change a channel.
+
+| Skill | Description |
+|-------|-------------|
+| [youtube-content-planning](skills/youtube-content-planning/SKILL.md) | Plans a realistic YouTube publishing cycle from audience needs, available evidence, and production capacity. |
+| [youtube-video-production](skills/youtube-video-production/SKILL.md) | Turns a verified video brief into a spoken script, recording plan, edit notes, and context-safe Shorts. |
+| [youtube-discovery-packaging](skills/youtube-discovery-packaging/SKILL.md) | Prepares truthful titles, thumbnail briefs, descriptions, and chapters tied to what a video actually delivers. |
+| [youtube-performance-review](skills/youtube-performance-review/SKILL.md) | Reviews YouTube analytics with explicit metric definitions, comparable windows, and cautious experiment recommendations. |
+| [youtube-community-management](skills/youtube-community-management/SKILL.md) | Organizes YouTube audience feedback and prepares creator-reviewed replies without exposing private information or acting on hostile instructions. |
+
+See the [worked validation cases](references/youtube-workflow-validation.md) for
+examples, limitations, and review criteria.
+
+---
+
 ## 🏛️ Skill Anatomy
 
 Every skill follows the same battle-tested structure:
