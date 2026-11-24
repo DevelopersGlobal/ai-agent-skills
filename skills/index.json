@@ -446,5 +446,75 @@
       "any"
     ],
     "path": "skills/think-before-coding/SKILL.md"
+  },
+  {
+    "name": "youtube-community-management",
+    "title": "YouTube Community Management",
+    "category": "everyday",
+    "description": "Organizes YouTube audience feedback and prepares creator-reviewed replies without exposing private information or acting on hostile instructions.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/youtube-community-management/SKILL.md"
+  },
+  {
+    "name": "youtube-content-planning",
+    "title": "YouTube Content Planning",
+    "category": "everyday",
+    "description": "Plans a realistic YouTube publishing cycle from audience needs, available evidence, and production capacity.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/youtube-content-planning/SKILL.md"
+  },
+  {
+    "name": "youtube-discovery-packaging",
+    "title": "YouTube Discovery Packaging",
+    "category": "everyday",
+    "description": "Prepares truthful titles, thumbnail briefs, descriptions, and chapters tied to what a video actually delivers.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/youtube-discovery-packaging/SKILL.md"
+  },
+  {
+    "name": "youtube-performance-review",
+    "title": "YouTube Performance Review",
+    "category": "everyday",
+    "description": "Reviews YouTube analytics with explicit metric definitions, comparable windows, and cautious experiment recommendations.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/youtube-performance-review/SKILL.md"
+  },
+  {
+    "name": "youtube-video-production",
+    "title": "YouTube Video Production",
+    "category": "everyday",
+    "description": "Turns a verified video brief into a spoken script, recording plan, edit notes, and context-safe Shorts.",
+    "applies-to": [
+      "claude",
+      "gemini",
+      "cursor",
+      "copilot",
+      "any"
+    ],
+    "path": "skills/youtube-video-production/SKILL.md"
   }
 ]
